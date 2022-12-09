@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="18sp"
+        android:fontFamily="@font/bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_nlet_s_get_your_taxes_done"
+        android:textColor="#383838"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/slide1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="16sp"
+        android:fontFamily="@font/regular"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_need_to_do_your_own_taxes_one_of_our_professional_tax_preparers_will_do_it_for_you"
+        android:textColor="#20201f"/>
+
+</LinearLayout>

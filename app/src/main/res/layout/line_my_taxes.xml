@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_bg">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder_button_home"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:background="@color/color_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:ellipsize="end"
+                android:layout_toStartOf="@+id/ln_1"
+                android:id="@+id/tv_name"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Completed Taxes 2019"
+                android:textSize="16sp"
+                android:textColor="#383838"
+                android:fontFamily="@font/bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_submit"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submitted_on"
+                android:textSize="12sp"
+                android:textColor="#8E8E8E"
+                android:fontFamily="@font/regular"/>
+
+            <LinearLayout
+                android:id="@+id/ln_1"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/boder_c_intro"
+                    android:tint="#31ac00"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_status"
+                    android:fontFamily="@font/regular"
+                    android:layout_marginStart="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complete"
+                    android:textColor="#31ac00"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_upload_document"
+                android:layout_below="@+id/tv_submit"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:tint="#9c9c9c"
+                        android:padding="10dp"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:src="@drawable/btn_upload"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_document"
+                        android:textColor="#9c9c9c"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_complete_client"
+                android:layout_below="@+id/cv_upload_document"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:tint="#9c9c9c"
+                        android:padding="10dp"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:src="@drawable/ic_completequestions"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/complete_client_questionnaire"
+                        android:textColor="#9c9c9c"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bt_make_payment"
+                android:layout_below="@+id/cv_complete_client"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:tint="#9c9c9c"
+                        android:padding="10dp"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:src="@mipmap/ic_payment"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/make_payment"
+                        android:textColor="#9c9c9c"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

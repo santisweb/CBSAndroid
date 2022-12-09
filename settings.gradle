@@ -1,0 +1,2 @@
+rootProject.name='TPB'
+include ':app', ':mobilertc', ':commonlib'

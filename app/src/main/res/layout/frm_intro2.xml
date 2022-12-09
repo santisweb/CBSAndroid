@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="18sp"
+        android:fontFamily="@font/bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/snap_photos_of_nyour_documents"
+        android:textColor="#383838"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/slide2"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="16sp"
+        android:fontFamily="@font/regular"
+        android:layout_margin="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/take_a_photo_of_your_w_2_and_other_documents_and_easily_upload_to_your_account"
+        android:textColor="#20201f"/>
+
+</LinearLayout>

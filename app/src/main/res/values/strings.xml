@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name" translatable="false">Cristal Business Services </string>
+    <string name="take_photo" translatable="false">Take Photo</string>
+    <string name="choose_library" translatable="false">Choose from Library</string>
+    <string name="add_photo" translatable="false">Add Photo!</string>
+    <string name="rationale_call" translatable="false">This app needs access to permission.</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="save_amp_continue" translatable="false">Guardar y Continuar</string>
+    <string name="accept_term_privacy">Por favor, acepte nuestras Condiciones de Uso y Privacidad</string>
+    <string name="pw_do_not_match">Se requiere confirmación de contraseña</string>
+    <string name="cf_pw_required">Se requiere confirmación de contraseña</string>
+    <string name="pw_required">Se requiere contraseña</string>
+    <string name="phone_required">Se requiere teléfono</string>
+    <string name="email_invalid">El correo electrónico no es válido</string>
+    <string name="email_required">El correo electrónico es obligatorio</string>
+    <string name="lname_required">Se requiere el apellido</string>
+    <string name="fname_required">Se requiere el nombre</string>
+
+    <string name="send_us_a_message">Enviar Mensaje</string>
+    <string name="our_office">Nuestra Oficina</string>
+    <string name="cancel">Cancelar</string>
+    <string name="upload_document">Subir Documento</string>
+    <string name="complete_client_questionnaire">Completar Questionario</string>
+    <string name="contact_us">Contactos</string>
+    <string name="select_tax_type">Tipo de Impuestos</string>
+    <string name="my_appointments">Mis Citas</string>
+    <string name="please_let_us_know_if_we_need_to_cancel_your_live_video_call_with_our_tax_pro">Por favor, háganos saber si tenemos que cancelar su videollamada en directo con nuestro Tax Pro.</string>
+    <string name="submit">Subir Documento</string>
+    <string name="tax_type">Tipo de Impuestos</string>
+    <string name="all_documents_related_to_tax_year">Todos los documentos relacionados con el año fiscal</string>
+    <string name="type_of_documents">Tipo de Documento</string>
+    <string name="you_can_upload_required_tax_document_types_such_as_w2_s_bank_statements_social_security_cards_drivers_license_proof_of_child_care_etc">Puede cargar los tipos de documentos fiscales requeridos, como  W2\'s, extractos bancarios, tarjetas de la Seguridad Social, carné de  conducir, prueba de Guardería, etc.</string>
+    <string name="make_payment">Hacer Pago</string>
+    <string name="enter_your_message_here">Escribir breve mensaje aquí</string>
+    <string name="send_message">Enviar Mensaje</string>
+    <string name="you_can_upload_required_tax_documents">Puede cargar los documentos fiscales\nnecesarios en el próximo paso.</string>
+    <string name="my_taxes">Mis Impuestos</string>
+    <string name="documents">Mis Documentos</string>
+    <string name="refund_status">Mi Reembolso</string>
+    <string name="file_my_taxes">LIenar Impuestos</string>
+    <string name="join_video_call">Entrar a Videollamada</string>
+    <string name="search">Bucar</string>
+    <string name="by_submitting_order_you_agree_with_our_terms_of_use_amp_privacy">Al enviar este formulario, acepta nuestras condiciones de uso y privacidad.</string>
+    <string name="get_directions">Ver Dirección</string>
+    <string name="logout">Salir</string>
+    <string name="get_started">Empezar Ahora</string>
+    <string name="welcome_nlet_s_get_your_taxes_done">"Bienvenido. ¡Es hora\nde hacer sus impuestos! "</string>
+    <string name="no_need_to_do_your_own_taxes_one_of_our_professional_tax_preparers_will_do_it_for_you">Nos encargamos de sus taxes\npersonales y corporativos (negocios).</string>
+    <string name="snap_photos_of_nyour_documents">Tome fotos de\nsus documentos</string>
+    <string name="take_a_photo_of_your_w_2_and_other_documents_and_easily_upload_to_your_account">Tome una foto de su W-2 y otros  documentos y súbalos fácilmente a su cuenta.</string>
+    <string name="live_video_call">Videollamada por Zoom</string>
+    <string name="get_your_taxes_done_from_the_comfort_of_your_home_n_na_professional_tax_preparer_will_review_your_taxes_and_make_sure_you_receive_the_refund_you_deserve">Haga sus impuestos desde la comodidad de su casa. Un Tax Pro  a revisar sus impuestos y se asegurará de que reciba el máximo reembolse que se merece.</string>
+    <string name="password">Clave</string>
+    <string name="login">Mi Cuenta</string>
+    <string name="login_to_view_your_refund_status_and_more">Inicie sesión para ver el estado de su reembolso\ny otras informaciones.</string>
+    <string name="forgot_your_password">¿Olvidaste la contraseña?</string>
+    <string name="don_t_have_an_account">¿No tienes una cuenta?</string>
+    <string name="register_now">Crea Una Ahora</string>
+    <string name="create_your_account">Crear Su Cuenta</string>
+    <string name="create_an_account_to_complete_your_taxes_you_will_have_secure_access_to_your_documents_and_we_ll_be_able_to_view_your_refund_status_and_more">Cree una cuenta para completar sus impuestos. Tendrá acceso seguro a sus documentos y podrá ver el estado de su reembolso.</string>
+    <string name="first_name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="confirm_password">Confirmar Clave</string>
+    <string name="register">Regístese</string>
+    <string name="phone">Celular</string>
+    <string name="skip">Saltar</string>
+    <string name="submitted_on">Enviado el</string>
+    <string name="no_data">No tienes citas agendadas</string>
+    <string name="do_you_want_to_logout">¿Quieres cerrar la sesión?</string>
+    <string name="borrar_mi_cuenta">Borrar Mi Cuenta</string>
+    <string name="we_will_charge_your_card_a_total_of">Cargaremos en su tarjeta un total de</string>
+    <string name="scan_your_card">Escanear Tarjeta</string>
+    <string name="name_on_card">Nombre en la Tarjeta</string>
+    <string name="card_number">Número de Tarjeta</string>
+    <string name="expiry">Expiración</string>
+    <string name="cvv">CVV</string>
+    <string name="name_on_card_invalid">Se requiere el nombre de la tarjeta</string>
+    <string name="card_number_invalid">Se requiere el número de tarjeta</string>
+    <string name="exp_invalid">Se requiere el mes año</string>
+    <string name="cvv_invalid">Se requiere el CVV</string>
+    <string name="upload_doc_required">Por favor, cargue el documento</string>
+    <string name="tax_required">Por favor, seleccione el tipo de impuesto</string>
+    <string name="type_required">Por favor, cargue el documento</string>
+</resources>

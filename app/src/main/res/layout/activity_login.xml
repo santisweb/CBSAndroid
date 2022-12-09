@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristalbusinessservices.Login"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:textColor="#383838"
+            android:fontFamily="@font/bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_to_view_your_refund_status_and_more"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#9c9c9c"
+            android:fontFamily="@font/regular"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="14sp"
+            android:layout_marginTop="60dp"
+            android:textColor="#9c9c9c"
+            android:fontFamily="@font/regular"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_email"
+            android:textColor="#383838"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/regular"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            style="@style/style_editext"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <View
+            android:visibility="gone"
+            android:layout_marginTop="-5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9c9c9c"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#9c9c9c"
+            android:fontFamily="@font/regular"/>
+
+        <RelativeLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_password"
+                android:textColor="#383838"
+                android:imeOptions="actionDone"
+                android:fontFamily="@font/regular"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:inputType="textPassword"
+                style="@style/style_editext"/>
+
+        </RelativeLayout>
+
+        <View
+            android:visibility="gone"
+            android:layout_marginTop="-5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9c9c9c"
+            android:layout_marginBottom="30dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/regular"
+            android:id="@+id/tv_forgot"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="@string/forgot_your_password"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="end"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_login"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:background="@drawable/bg_gradient_green"
+            android:fontFamily="@font/bold"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:id="@+id/ln_register"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_now"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/img_back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"/>
+
+</RelativeLayout>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristalbusinessservices.Register"
+    android:background="#ffffff">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_your_account"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:textColor="#383838"
+                android:fontFamily="@font/bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_an_account_to_complete_your_taxes_you_will_have_secure_access_to_your_documents_and_we_ll_be_able_to_view_your_refund_status_and_more"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:visibility="gone"
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Office"
+                android:textSize="14sp"
+                android:layout_marginTop="30dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:gravity="center|left"
+                    android:id="@+id/tv_office"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    style="@style/style_editext2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="5dp"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_alignParentEnd="true"/>
+
+                <View
+                    android:id="@+id/rl_office"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_marginStart="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/first_name"
+                        android:textSize="14sp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#9c9c9c"
+                        android:fontFamily="@font/regular"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_first_name"
+                        android:textColor="@color/colorAccent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:fontFamily="@font/bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        style="@style/style_editext"/>
+
+                    <View
+                        android:visibility="gone"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorAccent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_marginStart="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/last_name"
+                        android:textSize="14sp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#9c9c9c"
+                        android:fontFamily="@font/regular"/>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_last_name"
+                        android:textColor="@color/colorAccent"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:fontFamily="@font/bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        style="@style/style_editext"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"/>
+
+                    <View
+                        android:visibility="gone"
+                        android:layout_marginTop="-5dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorAccent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_email"
+                android:textColor="#383838"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/regular"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                style="@style/style_editext"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone"
+                android:textColor="#383838"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:fontFamily="@font/regular"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                style="@style/style_editext"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_password"
+                    android:imeOptions="actionNext"
+                    android:fontFamily="@font/regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    style="@style/style_editext2"
+                    android:inputType="textPassword"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/img_eye_password"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_eye2"/>
+
+            </RelativeLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_password"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edt_confirm_pasword"
+                    android:imeOptions="actionDone"
+                    android:fontFamily="@font/regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    style="@style/style_editext2"
+                    android:inputType="textPassword"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/img_eye_confirm_password"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_eye2"/>
+
+            </RelativeLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"
+                android:layout_marginBottom="30dp"/>
+
+            <LinearLayout
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_check_register"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_check"
+                    android:scaleType="fitXY"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/by_submitting_order_you_agree_with_our_terms_of_use_amp_privacy"
+                    android:layout_gravity="center"
+                    android:textSize="11sp"
+                    android:textColor="#9c9c9c"
+                    android:fontFamily="@font/regular"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_register"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/bg_gradient_green"
+                android:fontFamily="@font/bold"
+                android:text="@string/create_your_account"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/img_back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"/>
+
+</RelativeLayout>

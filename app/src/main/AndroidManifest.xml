@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cristalbusinessservices">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="q">
+        <activity android:name="com.cristalbusinessservices.MakePayment" />
+        <activity android:name="com.cristalbusinessservices.UploadDocument" />
+        <activity android:name="com.cristalbusinessservices.MyTaxes" />
+        <activity android:name="com.cristalbusinessservices.Fragment.Frm_Contact_Us" />
+        <activity android:name="com.cristalbusinessservices.MyAppointments" />
+        <activity android:name="com.cristalbusinessservices.FileMyTaxes" />
+        <activity android:name="com.cristalbusinessservices.Home" />
+        <activity android:name="com.cristalbusinessservices.Register" />
+        <activity android:name="com.cristalbusinessservices.Forgot" />
+        <activity android:name="com.cristalbusinessservices.Login" />
+        <activity android:name="com.cristalbusinessservices.Intro" />
+        <activity android:name="com.cristalbusinessservices.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBd_UHEsrpQq8IBCmmyqptRI2oLwVgeb0Q" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+    </application>
+
+
+
+</manifest>

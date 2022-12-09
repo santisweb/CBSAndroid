@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristalbusinessservices.Home"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/rl_menuhome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_menu">
+
+        <RelativeLayout
+            android:id="@+id/rl_1"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_avatar"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/boder_c_avatar"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar"
+                    app:civ_border_color="#ffffff"
+                    app:civ_border_width="1dp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/tv_name"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/rl_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:fontFamily="@font/bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_email"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/tv_name"
+                android:layout_toEndOf="@+id/rl_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_14"
+                android:fontFamily="@font/regular"/>
+            <LinearLayout
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_below="@id/tv_email"
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/bt_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@mipmap/ic_delete_account"
+                    android:layout_width="@dimen/dp_15"
+                    android:layout_height="@dimen/dp_15"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:text="@string/borrar_mi_cuenta"
+                    android:textSize="@dimen/sp_14"
+                    android:fontFamily="@font/regular"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_my_taxes"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/rl_1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_mytaxes"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_taxes"
+                android:layout_gravity="center|start"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_document"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/ln_my_taxes"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_documents"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/documents"
+                android:layout_gravity="center|start"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_contact_us"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/ln_document"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_contactus"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_us"
+                android:layout_gravity="center|start"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_our_office"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/ln_contact_us"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_ouroffice"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/our_office"
+                android:layout_gravity="center|start"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_refund_status"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/ln_our_office"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_refund"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/refund_status"
+                android:layout_gravity="center|start"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:fontFamily="@font/bold"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/ln_refund_status"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/bg_circle3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_logout"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="@string/logout"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:fontFamily="@font/regular"
+            android:background="@drawable/boder_button_logout"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_animation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:background="@color/zm_white"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/rl_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/img_logo_top"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_logo_top"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/vpg_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"/>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="gone"
+                        android:id="@+id/img_c1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/boder_c_home"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="gone"
+                        android:layout_marginStart="7dp"
+                        android:id="@+id/img_c2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/boder_c_intro"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:visibility="gone"
+                        android:layout_marginStart="7dp"
+                        android:id="@+id/img_c3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/boder_c_intro"/>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_file_ny_taxes"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:paddingStart="30dp"
+                        android:paddingLeft="30dp"
+
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_filemytaxes"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:gravity="left"
+                            android:layout_marginStart="15dp"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/file_my_taxes"
+                            android:textColor="#383838"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/bold"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_my_appointments"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:paddingStart="30dp"
+                        android:paddingLeft="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/boder_button_home2">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_myappointments"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:gravity="left"
+                            android:layout_marginStart="15dp"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_appointments"
+                            android:textColor="#383838"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/bold"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_join_video"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:paddingStart="30dp"
+                        android:paddingLeft="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/boder_button_home2">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_livevideo"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:gravity="left"
+                            android:layout_marginStart="15dp"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/join_video_call"
+                            android:textColor="#383838"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/bold"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#ffffff"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="56dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_1"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_1"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/bg_gradient_green"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_1"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/tab1_selected"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_2"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_2"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/bg_gradient_green"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_2"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/tab2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_3"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_3"
+                        android:visibility="invisible"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/bg_gradient_green"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_3"
+                        android:layout_gravity="center"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/tab3"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/flo_contac_us"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_marginBottom="56dp"/>
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/flo_my_document"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_marginBottom="56dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/img_menu"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/btn_menu"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"/>
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/view_hide_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</RelativeLayout>

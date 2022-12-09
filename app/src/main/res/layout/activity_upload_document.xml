@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cristalbusinessservices.UploadDocument"
+    android:background="@color/color_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/upload_document"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:textColor="#383838"
+                android:fontFamily="@font/bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tax_type"
+                android:textSize="14sp"
+                android:layout_marginTop="60dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:gravity="center|left"
+                    android:id="@+id/tv_tax"
+                    android:textColor="#383838"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    style="@style/style_editext2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="5dp"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_alignParentEnd="true"
+                    android:tint="#383838"/>
+
+            </RelativeLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:textColor="#9c9c9c"
+                android:layout_marginStart="16dp"
+                android:text="@string/all_documents_related_to_tax_year"
+                android:textSize="12sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type_of_documents"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9c9c9c"
+                android:fontFamily="@font/regular"/>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:gravity="center|left"
+                    android:id="@+id/tv_type"
+                    android:textColor="#383838"
+                    android:fontFamily="@font/bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    style="@style/style_editext2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="5dp"
+                    android:padding="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_alignParentEnd="true"
+                    android:tint="#383838"/>
+
+            </RelativeLayout>
+
+            <View
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9c9c9c"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:textColor="#9c9c9c"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/you_can_upload_required_tax_document_types_such_as_w2_s_bank_statements_social_security_cards_drivers_license_proof_of_child_care_etc"
+                android:textSize="12sp"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:visibility="gone"
+                android:inputType="textMultiLine"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/boder_editext_uploadocument"
+                android:textColor="#383838"
+                android:fontFamily="@font/regular"
+                android:textSize="16sp"
+                android:gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:hint="Describe the document you are uploading (Optional)"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_upload_document"
+                android:layout_below="@+id/tv_2"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:padding="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/btn_upload"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_select_image"
+                        android:layout_marginStart="-20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_document"
+                        android:textColor="#9c9c9c"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/bold"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/by_submitting_order_you_agree_with_our_terms_of_use_amp_privacy"
+                android:layout_gravity="center"
+                android:textSize="11sp"
+                android:textColor="#383838"
+                android:fontFamily="@font/regular"
+                android:layout_marginBottom="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_below="@+id/cv_upload_document"
+                android:id="@+id/bt_submit"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_gradient_green"
+                android:fontFamily="@font/bold"
+                android:textColor="#ffffff"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/img_back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"/>
+
+</RelativeLayout>
