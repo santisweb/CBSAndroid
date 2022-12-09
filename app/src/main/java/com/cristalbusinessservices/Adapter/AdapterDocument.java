@@ -81,7 +81,7 @@ public class AdapterDocument extends RecyclerView.Adapter<AdapterDocument.Recycl
             String reformattedStr0 = "";
             try {
                 reformattedStr0 = new SimpleDateFormat(strDateFormat0).format(new SimpleDateFormat(pattern_date0).parse(arrayList.get(position).getCreatedDateUtc()));
-                holder.tv_date_upload.setText("Uploaded on "+reformattedStr0);
+                holder.tv_date_upload.setText("Enviado el "+reformattedStr0);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -103,11 +103,11 @@ public class AdapterDocument extends RecyclerView.Adapter<AdapterDocument.Recycl
                 @Override
                 public void onClick(View view) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
-                    builder1.setMessage("Are you sure to delete?");
+                    builder1.setMessage("¿Estás seguro de eliminar?");
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
-                            "Yes",
+                            "Sí",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();

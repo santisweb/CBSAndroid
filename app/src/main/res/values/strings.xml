@@ -37,7 +37,7 @@
     <string name="my_taxes">Mis Impuestos</string>
     <string name="documents">Mis Documentos</string>
     <string name="refund_status">Mi Reembolso</string>
-    <string name="file_my_taxes">LIenar Impuestos</string>
+    <string name="file_my_taxes">Llenar Mis Impuetos</string>
     <string name="join_video_call">Entrar a Videollamada</string>
     <string name="search">Bucar</string>
     <string name="by_submitting_order_you_agree_with_our_terms_of_use_amp_privacy">Al enviar este formulario, acepta nuestras condiciones de uso y privacidad.</string>
@@ -81,4 +81,5 @@
     <string name="upload_doc_required">Por favor, cargue el documento</string>
     <string name="tax_required">Por favor, seleccione el tipo de impuesto</string>
     <string name="type_required">Por favor, cargue el documento</string>
+    <string name="download">Descargar</string>
 </resources>
