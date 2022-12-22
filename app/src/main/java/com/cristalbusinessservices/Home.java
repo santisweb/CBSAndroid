@@ -7,6 +7,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -20,17 +23,21 @@ import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.cristalbusinessservices.Adapter.AdapterMeeting;
+import com.cristalbusinessservices.Model.Meeting;
 import com.google.gson.JsonObject;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
@@ -53,6 +60,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,18 +69,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import us.zoom.sdk.JoinMeetingOptions;
-import us.zoom.sdk.JoinMeetingParams;
-import us.zoom.sdk.MeetingService;
-import us.zoom.sdk.MeetingServiceListener;
-import us.zoom.sdk.MeetingStatus;
-import us.zoom.sdk.ZoomSDK;
-import us.zoom.sdk.ZoomSDKAuthenticationListener;
-import us.zoom.sdk.ZoomSDKInitParams;
-import us.zoom.sdk.ZoomSDKInitializeListener;
-import us.zoom.sdk.ZoomSDKRawDataMemoryMode;
 
-public class Home extends BaseActivity implements Constants, ZoomSDKInitializeListener, MeetingServiceListener, ZoomSDKAuthenticationListener {
+public class Home extends BaseActivity implements Constants{
     @BindView(R.id.img_logo_top)
     AppCompatImageView img_logo_top;
     @BindView(R.id.vpg_home)
@@ -130,6 +128,8 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
     CustomPagerAdapter customPagerAdapter;
     Frm_My_Document frm_my_document;
     boolean checkClick = false;
+    List<Meeting> list;
+    AdapterMeeting adapterMeeting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,20 +138,6 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
         dataUser = (APIUserInfo) getIntent().getExtras().getSerializable("objectUser");
         ButterKnife.bind(this);
         try {
-
-            ZoomSDK zoomSDK = ZoomSDK.getInstance();
-
-            if(savedInstanceState == null) {
-                ZoomSDKInitParams initParams = new ZoomSDKInitParams();
-//                initParams.jwtToken = SDK_JWTTOKEN;
-                initParams.enableLog = true;
-                initParams.logSize = 50;
-                initParams.videoRawDataMemoryMode = ZoomSDKRawDataMemoryMode.ZoomSDKRawDataMemoryModeStack;
-                initParams.appKey = APP_KEY;
-                initParams.appSecret = APP_SECRET;
-                initParams.domain = WEB_DOMAIN;
-                zoomSDK.initialize(this, this, initParams);
-            }
 
             aminLeft = AnimationUtils.loadAnimation(this, R.anim.anim_left);
             aminRight = AnimationUtils.loadAnimation(this, R.anim.anim_right);
@@ -224,6 +210,7 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
         } catch (Exception e) {
             e.printStackTrace();
         }
+        list = new ArrayList<>();
     }
 
     @OnClick({R.id.ln_refund_status, R.id.cv_join_video, R.id.ln_document, R.id.ln_contact_us, R.id.tv_logout, R.id.ln_my_taxes, R.id.ln_our_office,
@@ -497,19 +484,20 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
                         hideLoading();
                         if (response.isSuccessful() && response.code() == 200) {
                             if (response.body().getIsSuccess()) {
-                                List<String> arrData = new ArrayList<>();
+                                list.clear();
                                 for (int q=0; q<=response.body().getResult().size()-1; q++){
                                     try {
                                         String pattern_date0 = "yyyy-MM-dd'T'HH:mm:ss";
-                                        String strDateFormat0 = "EEEE, MMMM dd yyyy '@' hh:mm a";
+                                        String strDateFormat0 = "MM/dd/yyyy '@' hh:mm a";
                                         String reformattedStr0 = "";
                                         try {
-                                            reformattedStr0 = new SimpleDateFormat(strDateFormat0).format(new SimpleDateFormat(pattern_date0).parse(response.body().getResult().get(q).getStartDate()));
+                                            reformattedStr0 = new SimpleDateFormat(strDateFormat0, Locale.ENGLISH).format(new SimpleDateFormat(pattern_date0, Locale.ENGLISH).parse(response.body().getResult().get(q).getStartDate()));
 
                                         } catch (ParseException e) {
                                             e.printStackTrace();
                                         }
-                                        arrData.add(response.body().getResult().get(q).getShortDescription()+"\n"+reformattedStr0);
+
+                                        list.add(new Meeting(reformattedStr0, response.body().getResult().get(q).getShortDescription(), response.body().getResult().get(q).getMeetingUrl().toString()));
                                     }catch (Exception e){
                                         e.printStackTrace();
                                     }
@@ -518,21 +506,14 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
                                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 dialog.setCancelable(false);
                                 dialog.setContentView(R.layout.line_dialog);
-
-                                ListView listView_call = dialog.findViewById(R.id.listView_call);
-                                listView_call.setAdapter(new ArrayAdapter<>(Home.this, android.R.layout.simple_list_item_1, arrData));
-                                listView_call.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                                        try {
-                                            Log.e("id meeting",response.body().getResult().get(i).getMeetingId()+"---");
-                                            onClickBtnJoinMeeting(response.body().getResult().get(i).getMeetingId());
-                                            dialog.cancel();
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-                                });
+                                dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                                RecyclerView rcv = dialog.findViewById(R.id.rcv);
+                                Button btCancel = dialog.findViewById(R.id.bt_cancel);
+                                adapterMeeting = new AdapterMeeting(Home.this, list);
+                                rcv.setLayoutManager(new LinearLayoutManager(Home.this, LinearLayoutManager.VERTICAL, false));
+                                rcv.addItemDecoration(new DividerItemDecoration(Home.this, DividerItemDecoration.VERTICAL));
+                                rcv.setAdapter(adapterMeeting);
+                                btCancel.setOnClickListener(v -> dialog.dismiss());
                                 dialog.show();
 //                                AlertDialog.Builder builder = new AlertDialog.Builder(Home.this);
 //                                builder.setItems(arrData.toArray(new String[0]), new DialogInterface.OnClickListener() {
@@ -676,86 +657,12 @@ public class Home extends BaseActivity implements Constants, ZoomSDKInitializeLi
             Toast.makeText(this, "You need to enter a meeting number/ vanity id which you want to join.", Toast.LENGTH_LONG).show();
             return;
         }
-
-//        // Step 2: Get Zoom SDK instance.
-//        zoomSDK = ZoomSDK.getInstance();
-        // Check if the zoom SDK is initialized
-        ZoomSDK zoomSDK = ZoomSDK.getInstance();
-        if(!zoomSDK.isInitialized()) {
-            Toast.makeText(this, "ZoomSDK has not been initialized successfully", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        // Step 3: Get meeting service from zoom SDK instance.
-        MeetingService meetingService = zoomSDK.getMeetingService();
-
-        // Step 4: Configure meeting options.
-        JoinMeetingOptions opts = new JoinMeetingOptions();
-
-        // Some available options
-        //		opts.no_driving_mode = true;
-        //		opts.no_invite = true;
-        //		opts.no_meeting_end_message = true;
-        //		opts.no_titlebar = true;
-        //		opts.no_bottom_toolbar = true;
-        //		opts.no_dial_in_via_phone = true;
-        //		opts.no_dial_out_to_phone = true;
-        //		opts.no_disconnect_audio = true;
-        //		opts.no_share = true;
-        //		opts.invite_options = InviteOptions.INVITE_VIA_EMAIL + InviteOptions.INVITE_VIA_SMS;
-        //		opts.no_audio = true;
-        //		opts.no_video = true;
-        //		opts.meeting_views_options = MeetingViewsOptions.NO_BUTTON_SHARE;
-        //		opts.no_meeting_error_message = true;
-        //		opts.participant_id = "participant id";
-
-        // Step 5: Setup join meeting parameters
-        JoinMeetingParams params = new JoinMeetingParams();
-
-        params.displayName = dataUser.getResult().getFullName();
-        params.meetingNo = meetingNo;
-
-        // Step 6: Call meeting service to join meeting
-        meetingService.joinMeetingWithParams(this, params, opts);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.e("onActivityResult", "requestCode"+requestCode+"\n"+"resultCode"+resultCode+"\n");
-    }
-
-
-
-    @Override
-    public void onMeetingStatusChanged(MeetingStatus meetingStatus, int i, int i1) {
-        Log.e("onActivityResult", "meetingStatus"+meetingStatus.toString());
-    }
-
-    @Override
-    public void onZoomSDKLoginResult(long l) {
-        Log.e("onZoomSDKLoginResult", "onZoomSDKLoginResult"+l);
-    }
-
-    @Override
-    public void onZoomSDKLogoutResult(long l) {
-        Log.e("onZoomSDKLogoutResult", "onZoomSDKLogoutResult"+l);
-    }
-
-    @Override
-    public void onZoomIdentityExpired() {
-        Log.e("onZoomIdentityExpired", "onZoomIdentityExpired");
-    }
-
-    @Override
-    public void onZoomSDKInitializeResult(int i, int i1) {
-        Log.e("onZoomSDKInitialize", i+" - "+i1);
-    }
-
-    @SuppressLint("LongLogTag")
-    @Override
-    public void onZoomAuthIdentityExpired() {
-        Log.e("onZoomAuthIdentityExpired", "onZoomAuthIdentityExpired");
     }
 
     @Override

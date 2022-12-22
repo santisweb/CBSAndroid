@@ -322,7 +322,6 @@ public class QTSHelp {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("Token", Token);
         editor.apply();
-        editor.commit();
     }
 
     public static String getToken(Context context) {
@@ -337,7 +336,7 @@ public class QTSHelp {
                 QTSConstrains.SHAREPRE_ID, 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("TokenC", Token);
-        editor.commit();
+        editor.apply();
     }
 
     public static String getTokenC(Context context) {
